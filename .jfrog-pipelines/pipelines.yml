@@ -49,6 +49,7 @@ pipelines:
         type: NpmBuild
         configuration:
           repositoryName: dashboard-npm-virtual                                      # required, npm repository name on artifacctory
+          affinityGroup: npm_grp
           sourceLocation: ./      # required, location of package.json file
           integrations:
             - name:  Artifactory  # required
@@ -62,6 +63,7 @@ pipelines:
         type: NpmPublish
         configuration:
           repositoryName: dashboard-npm-virtual        # required, npm repository name on artifactory
+          affinityGroup: npm_grp
           autoPublishBuildInfo: true       # optional
           forceXrayScan: true              # optional
           failOnScan: false                 # default true
